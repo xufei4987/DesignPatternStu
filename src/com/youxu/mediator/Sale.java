@@ -3,7 +3,12 @@ package com.youxu.mediator;
 import java.util.Random;
 
 //销售管理
-public class Sale {
+public class Sale extends AbstractColleague{
+
+    public Sale(AbstractMediator mediator) {
+        super(mediator);
+    }
+
     public int getSaleStatus() {
         Random random = new Random(System.currentTimeMillis());
         int status = random.nextInt(100);
@@ -12,17 +17,10 @@ public class Sale {
     }
 
     public void offSale() {
-        Stock stock =new Stock();
-        System.out.println("折价销售电脑：" + stock.getComputerStock());
+        super.mediator.execute("sale.offsale");
     }
 
     public void sellComputer(int number){
-        Stock stock = new Stock();
-        Purchase purchase = new Purchase();
-        if(number > stock.getComputerStock()){
-            //采购
-            purchase.buyComputer(number);
-        }
-        stock.decrease(number);
+        super.mediator.execute("sale.sellComputer",number);
     }
 }

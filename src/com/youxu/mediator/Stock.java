@@ -1,7 +1,11 @@
 package com.youxu.mediator;
 //库存管理
-public class Stock {
+public class Stock extends AbstractColleague{
     private static int COMPUTER_STOCK = 100;
+
+    public Stock(AbstractMediator mediator) {
+        super(mediator);
+    }
 
     public void increase(int number) {
         COMPUTER_STOCK = COMPUTER_STOCK + number;
@@ -18,13 +22,7 @@ public class Stock {
     }
 
     public void clearStock(){
-        Purchase purchase = new Purchase();
-        Sale sale = new Sale();
-        System.out.println("清理存货数量为：" + COMPUTER_STOCK);
-        //折价销售
-        sale.offSale();
-        //不再采购
-        purchase.refuseBuyComputer();
+        super.mediator.execute("stock.clear");
     }
 
 }
