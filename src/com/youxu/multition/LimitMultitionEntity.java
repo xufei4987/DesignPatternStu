@@ -1,4 +1,4 @@
-package com.youxu.Multition;
+package com.youxu.multition;
 
 import java.util.ArrayList;
 import java.util.List;

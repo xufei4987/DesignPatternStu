@@ -1,4 +1,4 @@
-package com.youxu.Multition;
+package com.youxu.multition;
 //多例模式
 public class MultitionMain {
     public static void main(String[] args) {

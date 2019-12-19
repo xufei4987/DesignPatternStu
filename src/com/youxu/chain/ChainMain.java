@@ -1,4 +1,4 @@
-package com.youxu.Chain;
+package com.youxu.chain;
 //责任链模式，核心在于处理链
 public class ChainMain {
     public static void main(String[] args) {

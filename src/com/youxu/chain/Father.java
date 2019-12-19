@@ -1,4 +1,4 @@
-package com.youxu.Chain;
+package com.youxu.chain;
 
 public class Father extends AbstractHandler {
 
